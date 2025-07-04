@@ -1,7 +1,15 @@
+html, body, #root {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+}
+
 .app {
   position: relative;
   height: 100vh;
   width: 100vw;
+  overflow: hidden;
 }
 
 .map-title {
@@ -17,17 +25,9 @@
   pointer-events: none;
 }
 
-.menu-desktop {
-  position: absolute;
-  top: 16px;
-  right: 16px;
-  background: white;
-  padding: 8px;
-  border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.2);
-  cursor: pointer;
-  z-index: 1000;
-  display: none;
+.map-wrapper {
+  height: 100%;
+  width: 100%;
 }
 
 .menu-mobile {
@@ -43,16 +43,124 @@
   z-index: 1000;
 }
 
-.menu-mobile svg {
+.menu-mobile button {
+  background: none;
+  border: none;
   font-size: 20px;
+  cursor: pointer;
+}
+
+.desktop-toolbar {
+  display: none;
+}
+
+.menu-panel {
+  position: absolute;
+  bottom: 56px; 
+  left: 0;
+  width: 100%;
+  background: white;
+  padding: 16px;
+  z-index: 1001;
+  box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
+  animation: slideUp 0.25s ease-out;
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(100%);
+  }
+  to {
+    transform: translateY(0%);
+  }
+}
+
+.menu-panel input,
+.menu-panel select {
+  padding: 8px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  width: 100%;
+}
+
+.menu-panel label {
+  font-weight: bold;
+  margin-top: 4px;
+}
+
+.close-btn {
+  align-self: flex-end;
+  background: none;
+  border: none;
+  font-size: 14px;
+  cursor: pointer;
+  color: #888;
 }
 
 @media (min-width: 768px) {
-  .menu-desktop {
-    display: block;
+  .menu-panel {
+    bottom: auto;
+    top: 100px;
+    right: 0;
+    left: auto;
+    width: 280px;
+    border-radius: 8px;
+    animation: slideInRight 0.25s ease-out;
+  }
+
+  @keyframes slideInRight {
+    from {
+      transform: translateX(100%);
+    }
+    to {
+      transform: translateX(0%);
+    }
+  }
+
+  .desktop-toolbar {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    position: absolute;
+    top: 100px;
+    right: 16px;
+    z-index: 1000;
+  }
+
+  .desktop-toolbar button {
+    background: white;
+    border: none;
+    border-radius: 8px;
+    padding: 10px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.3);
+    cursor: pointer;
+    font-size: 18px;
   }
 
   .menu-mobile {
     display: none;
   }
 }
+
+.apply-btn {
+  padding: 10px;
+  font-size: 15px;
+  background-color: black;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  margin-top: 12px;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.apply-btn:hover {
+  background-color: #333;
+}
+
