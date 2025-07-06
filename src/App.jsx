@@ -15,7 +15,11 @@ function App() {
   const [indoorOutdoorFilter, setIndoorOutdoorFilter] = useState("all");
   const [openingHoursFilter, setOpeningHoursFilter] = useState("all");
 
-  const [menuOpen, setMenuOpen] = useState(false);
+  const [searchQuery, setSearchQuery] = useState("");
+  const [activeSearchPlace, setActiveSearchPlace] = useState("");
+
+  const [filterOpen, setFilterOpen] = useState(false);
+  const [searchPanelOpen, setSearchPanelOpen] = useState(false);
 
   const filteredCourts = allCourts.filter((court) => {
     const matchesQuery =
@@ -38,11 +42,16 @@ function App() {
       (openingHoursFilter === "afternoon" && court.openingHours.includes("12pm")) ||
       (openingHoursFilter === "evening" && court.openingHours.includes("pm"));
 
+    const matchesPlace =
+      activeSearchPlace === "" ||
+      court.place.toLowerCase() === activeSearchPlace.toLowerCase();
+
     return (
       matchesQuery &&
       matchesSurface &&
       matchesIndoorOutdoor &&
-      matchesOpeningHours
+      matchesOpeningHours &&
+      matchesPlace
     );
   });
 
@@ -51,23 +60,60 @@ function App() {
       <div className="map-title">Court Finder</div>
 
       <div className="desktop-toolbar">
-        <button onClick={() => setMenuOpen(!menuOpen)}><FaFilter /></button>
-        <button><FaSearch /></button>
-        <button><FaMapMarkerAlt /></button>
+        <button
+          onClick={() => {
+            setFilterOpen(!filterOpen);
+            setSearchPanelOpen(false);
+          }}
+        >
+          <FaFilter />
+        </button>
+        <button
+          onClick={() => {
+            setSearchPanelOpen(!searchPanelOpen);
+            setFilterOpen(false);
+          }}
+        >
+          <FaSearch />
+        </button>
+        <button>
+          <FaMapMarkerAlt />
+        </button>
       </div>
 
       <div className="menu-mobile">
-        <button onClick={() => setMenuOpen(!menuOpen)}><FaFilter /></button>
-        <button><FaSearch /></button>
-        <button><FaMapMarkerAlt /></button>
+        <button
+          onClick={() => {
+            setFilterOpen(!filterOpen);
+            setSearchPanelOpen(false);
+          }}
+        >
+          <FaFilter />
+        </button>
+        <button
+          onClick={() => {
+            setSearchPanelOpen(!searchPanelOpen);
+            setFilterOpen(false);
+          }}
+        >
+          <FaSearch />
+        </button>
+        <button>
+          <FaMapMarkerAlt />
+        </button>
       </div>
 
-      {menuOpen && (
+      {filterOpen && (
         <div className="menu-panel">
-          <button className="close-btn" onClick={() => setMenuOpen(false)}>Close ✕</button>
+          <button className="close-btn" onClick={() => setFilterOpen(false)}>
+            Close ✕
+          </button>
 
           <label>Surface</label>
-          <select value={tempSurface} onChange={(e) => setTempSurface(e.target.value)}>
+          <select
+            value={tempSurface}
+            onChange={(e) => setTempSurface(e.target.value)}
+          >
             <option value="all">All Surfaces</option>
             <option value="wood">Wood</option>
             <option value="hard">Hard</option>
@@ -75,27 +121,59 @@ function App() {
           </select>
 
           <label>Indoor / Outdoor</label>
-          <select value={tempIndoorOutdoor} onChange={(e) => setTempIndoorOutdoor(e.target.value)}>
+          <select
+            value={tempIndoorOutdoor}
+            onChange={(e) => setTempIndoorOutdoor(e.target.value)}
+          >
             <option value="all">All</option>
             <option value="Indoor">Indoor</option>
             <option value="Outdoor">Outdoor</option>
           </select>
 
           <label>Opening Hours</label>
-          <select value={tempOpeningHours} onChange={(e) => setTempOpeningHours(e.target.value)}>
+          <select
+            value={tempOpeningHours}
+            onChange={(e) => setTempOpeningHours(e.target.value)}
+          >
             <option value="all">All Day</option>
             <option value="morning">Morning</option>
             <option value="afternoon">Afternoon</option>
             <option value="evening">Evening</option>
           </select>
 
-          <button className="apply-btn" onClick={() => {
-            setSurfaceFilter(tempSurface);
-            setIndoorOutdoorFilter(tempIndoorOutdoor);
-            setOpeningHoursFilter(tempOpeningHours);
-            setMenuOpen(false);
-          }}>
+          <button
+            className="apply-btn"
+            onClick={() => {
+              setSurfaceFilter(tempSurface);
+              setIndoorOutdoorFilter(tempIndoorOutdoor);
+              setOpeningHoursFilter(tempOpeningHours);
+              setFilterOpen(false);
+            }}
+          >
             Apply
+          </button>
+        </div>
+      )}
+
+      {searchPanelOpen && (
+        <div className="search-panel">
+          <button className="close-btn" onClick={() => setSearchPanelOpen(false)}>
+            Close ✕
+          </button>
+          <input
+            type="text"
+            placeholder="Search by place (e.g. Belfast)"
+            value={searchQuery}
+            onChange={(e) => setSearchQuery(e.target.value)}
+          />
+          <button
+            className="apply-btn"
+            onClick={() => {
+              setActiveSearchPlace(searchQuery);
+              setSearchPanelOpen(false);
+            }}
+          >
+            Search
           </button>
         </div>
       )}
