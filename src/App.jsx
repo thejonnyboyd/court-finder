@@ -20,6 +20,7 @@ function App() {
 
   const [filterOpen, setFilterOpen] = useState(false);
   const [searchPanelOpen, setSearchPanelOpen] = useState(false);
+  const [userLocation, setUserLocation] = useState(null);
 
   const filteredCourts = allCourts.filter((court) => {
     const matchesQuery =
@@ -39,7 +40,8 @@ function App() {
     const matchesOpeningHours =
       openingHoursFilter === "all" ||
       (openingHoursFilter === "morning" && court.openingHours.includes("am")) ||
-      (openingHoursFilter === "afternoon" && court.openingHours.includes("12pm")) ||
+      (openingHoursFilter === "afternoon" &&
+        court.openingHours.includes("12pm")) ||
       (openingHoursFilter === "evening" && court.openingHours.includes("pm"));
 
     const matchesPlace =
@@ -54,6 +56,26 @@ function App() {
       matchesPlace
     );
   });
+
+  const handleLocateUser = () => {
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition(
+        (position) => {
+          setUserLocation({
+            lat: position.coords.latitude,
+            lng: position.coords.longitude,
+          });
+          console.log("User location set to:", position.coords);
+        },
+        (error) => {
+          alert("Unable to retrieve your location.");
+          console.error(error);
+        }
+      );
+    } else {
+      alert("Geolocation is not supported by your browser.");
+    }
+  };
 
   return (
     <div className="app">
@@ -76,7 +98,7 @@ function App() {
         >
           <FaSearch />
         </button>
-        <button>
+        <button onClick={handleLocateUser}>
           <FaMapMarkerAlt />
         </button>
       </div>
@@ -98,7 +120,7 @@ function App() {
         >
           <FaSearch />
         </button>
-        <button>
+        <button onClick={handleLocateUser}>
           <FaMapMarkerAlt />
         </button>
       </div>
@@ -152,12 +174,32 @@ function App() {
           >
             Apply
           </button>
+
+          <button
+            className="clear-btn"
+            onClick={() => {
+              setTempSurface("all");
+              setTempIndoorOutdoor("all");
+              setTempOpeningHours("all");
+
+              setSurfaceFilter("all");
+              setIndoorOutdoorFilter("all");
+              setOpeningHoursFilter("all");
+
+              setFilterOpen(false);
+            }}
+          >
+            Clear All Filters
+          </button>
         </div>
       )}
 
       {searchPanelOpen && (
         <div className="search-panel">
-          <button className="close-btn" onClick={() => setSearchPanelOpen(false)}>
+          <button
+            className="close-btn"
+            onClick={() => setSearchPanelOpen(false)}
+          >
             Close ✕
           </button>
           <input
@@ -179,7 +221,7 @@ function App() {
       )}
 
       <div className="map-wrapper">
-        <MapView courts={filteredCourts} />
+        <MapView courts={filteredCourts} userLocation={userLocation} />
       </div>
     </div>
   );

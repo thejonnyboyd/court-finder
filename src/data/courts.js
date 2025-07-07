@@ -77,7 +77,7 @@ export const courts = [
     surface: "Hard",
     indoorOutdoor: "Indoor",
     contact: "https://www.better.org.uk/leisure-centre/belfast/lisnasharragh",
-    coordinates: [54.5774223,-5.8818956],
+    coordinates: [54.5774223, -5.8818956],
   },
   {
     name: "Blair Mayne Leisure Centre",
@@ -87,7 +87,7 @@ export const courts = [
     surface: "Hard",
     indoorOutdoor: "Indoor",
     contact: "https://www.leisureardsandnorthdown.com/centres/ards",
-    coordinates: [54.5907821,-5.7005352],
+    coordinates: [54.5907821, -5.7005352],
   },
   {
     name: "Comber Leisure Centre",
@@ -97,7 +97,7 @@ export const courts = [
     surface: "Synthetic",
     indoorOutdoor: "Indoor",
     contact: "https://www.leisureardsandnorthdown.com/centres/comber",
-    coordinates: [54.5521143,-5.7460015],
+    coordinates: [54.5521143, -5.7460015],
   },
   {
     name: "Queen's Leisure Complex",
@@ -106,8 +106,9 @@ export const courts = [
     openingHours: "7am - 9pm",
     surface: "Synthetic",
     indoorOutdoor: "Indoor",
-    contact: "https://www.northdownleisure.com/queens-leisure-complex/facilities/sports-hall-courts/",
-    coordinates: [54.6406227,-5.8378196],
+    contact:
+      "https://www.northdownleisure.com/queens-leisure-complex/facilities/sports-hall-courts/",
+    coordinates: [54.6406227, -5.8378196],
   },
   {
     name: "Ballysillian Leisure Centre",
@@ -116,8 +117,9 @@ export const courts = [
     openingHours: "7:30am - 10pm",
     surface: "Synthetic",
     indoorOutdoor: "Indoor",
-    contact: "https://www.better.org.uk/leisure-centre/belfast/ballysillan-leisure-centre/racquet-courts",
-    coordinates: [54.6228963,-5.9701636],
+    contact:
+      "https://www.better.org.uk/leisure-centre/belfast/ballysillan-leisure-centre/racquet-courts",
+    coordinates: [54.6228963, -5.9701636],
   },
   {
     name: "Brook Leisure Centre",
@@ -126,8 +128,9 @@ export const courts = [
     openingHours: "7am - 9pm",
     surface: "Synthetic",
     indoorOutdoor: "Indoor",
-    contact: "https://www.better.org.uk/leisure-centre/belfast/brook-leisure-centre",
-    coordinates: [54.5544108,-6.0207747],
+    contact:
+      "https://www.better.org.uk/leisure-centre/belfast/brook-leisure-centre",
+    coordinates: [54.5544108, -6.0207747],
   },
   {
     name: "Falls Leisure Centre",
@@ -136,8 +139,9 @@ export const courts = [
     openingHours: "7:15am - 10pm",
     surface: "Synthetic",
     indoorOutdoor: "Indoor",
-    contact: "https://www.better.org.uk/leisure-centre/belfast/falls-leisure-centre",
-    coordinates: [54.5990478,-5.9495466],
+    contact:
+      "https://www.better.org.uk/leisure-centre/belfast/falls-leisure-centre",
+    coordinates: [54.5990478, -5.9495466],
   },
   {
     name: "Olympia Leisure Centre",
@@ -146,8 +150,9 @@ export const courts = [
     openingHours: "6am - 10pm",
     surface: "Synthetic",
     indoorOutdoor: "Indoor",
-    contact: "https://www.better.org.uk/leisure-centre/belfast/olympia-leisure-centre",
-    coordinates: [54.5831893,-5.9568013],
+    contact:
+      "https://www.better.org.uk/leisure-centre/belfast/olympia-leisure-centre",
+    coordinates: [54.5831893, -5.9568013],
   },
   {
     name: "Shankill Leisure Centre",
@@ -156,8 +161,9 @@ export const courts = [
     openingHours: "7:15am - 10pm",
     surface: "Synthetic",
     indoorOutdoor: "Indoor",
-    contact: "https://www.better.org.uk/leisure-centre/belfast/shankill-leisure-centre",
-    coordinates: [54.6033695,-5.9451254],
+    contact:
+      "https://www.better.org.uk/leisure-centre/belfast/shankill-leisure-centre",
+    coordinates: [54.6033695, -5.9451254],
   },
   {
     name: "Whiterock Leisure Centre",
@@ -166,8 +172,9 @@ export const courts = [
     openingHours: "7:15am - 10pm",
     surface: "Synthetic",
     indoorOutdoor: "Indoor",
-    contact: "https://www.better.org.uk/leisure-centre/belfast/whiterock-leisure-centre",
-    coordinates: [54.5908505,-5.9857335],
+    contact:
+      "https://www.better.org.uk/leisure-centre/belfast/whiterock-leisure-centre",
+    coordinates: [54.5908505, -5.9857335],
   },
   {
     name: "Allen Park",
@@ -177,7 +184,7 @@ export const courts = [
     surface: "Synthetic",
     indoorOutdoor: "Indoor",
     contact: "https://antrimandnewtownabbey.gov.uk/allenpark/",
-    coordinates: [54.7265004,-6.2481062],
+    coordinates: [54.7265004, -6.2481062],
   },
   {
     name: "Antrim Forum",
@@ -187,7 +194,7 @@ export const courts = [
     surface: "Synthetic",
     indoorOutdoor: "Indoor",
     contact: "https://antrimandnewtownabbey.gov.uk/antrimforum/",
-    coordinates: [54.7135403,-6.2229824],
+    coordinates: [54.7135403, -6.2229824],
   },
   {
     name: "Crumlin Leisure Centre",
@@ -197,7 +204,7 @@ export const courts = [
     surface: "Wood",
     indoorOutdoor: "Indoor",
     contact: "https://antrimandnewtownabbey.gov.uk/crumlin/",
-    coordinates: [54.6191152,-6.213321],
+    coordinates: [54.6191152, -6.213321],
   },
   {
     name: "Sixmile Leisure Centre",
@@ -207,7 +214,7 @@ export const courts = [
     surface: "Wood",
     indoorOutdoor: "Indoor",
     contact: "https://antrimandnewtownabbey.gov.uk/sixmile/",
-    coordinates: [54.752808,-5.996564],
+    coordinates: [54.752808, -5.996564],
   },
   {
     name: "Valley Leisure Centre",
@@ -217,7 +224,7 @@ export const courts = [
     surface: "Wood",
     indoorOutdoor: "Indoor",
     contact: "https://antrimandnewtownabbey.gov.uk/valley/",
-    coordinates: [54.6612193,-5.9306101],
+    coordinates: [54.6612193, -5.9306101],
   },
   {
     name: "Banbridge Leisure Centre",
@@ -227,7 +234,7 @@ export const courts = [
     surface: "Wood",
     indoorOutdoor: "Indoor",
     contact: "https://getactiveabc.com/facility/banbridge-leisure-centre/",
-    coordinates: [54.352096,-6.2695432],
+    coordinates: [54.352096, -6.2695432],
   },
   {
     name: "Dromore Community Centre",
@@ -237,7 +244,7 @@ export const courts = [
     surface: "Wood",
     indoorOutdoor: "Indoor",
     contact: "https://getactiveabc.com/facility/dromore-community-centre/",
-    coordinates: [54.4156454,-6.1697667],
+    coordinates: [54.4156454, -6.1697667],
   },
   {
     name: "Gilford Community Centre",
@@ -247,7 +254,7 @@ export const courts = [
     surface: "Wood",
     indoorOutdoor: "Indoor",
     contact: "https://getactiveabc.com/facility/gilford-community-centre/",
-    coordinates: [54.3730742,-6.362007],
+    coordinates: [54.3730742, -6.362007],
   },
   {
     name: "Rathfriland Community Centre",
@@ -257,7 +264,7 @@ export const courts = [
     surface: "Wood",
     indoorOutdoor: "Indoor",
     contact: "https://getactiveabc.com/facility/rathfriland-community-centre/",
-    coordinates: [54.2368629,-6.1628135],
+    coordinates: [54.2368629, -6.1628135],
   },
   {
     name: "South Lake Leisure Centre",
@@ -267,7 +274,7 @@ export const courts = [
     surface: "Wood",
     indoorOutdoor: "Indoor",
     contact: "https://getactiveabc.com/facility/south-lake-leisure-centre/",
-    coordinates: [54.449657,-6.3839],
+    coordinates: [54.449657, -6.3839],
   },
   {
     name: "Tandragee Recreation Centre",
@@ -277,7 +284,7 @@ export const courts = [
     surface: "Wood",
     indoorOutdoor: "Indoor",
     contact: "https://getactiveabc.com/facility/tandragee-recreation-centre/",
-    coordinates: [54.3540522,-6.4098824],
+    coordinates: [54.3540522, -6.4098824],
   },
   {
     name: "Glenmore Activity Centre",
@@ -287,7 +294,64 @@ export const courts = [
     surface: "Wood",
     indoorOutdoor: "Indoor",
     contact: "https://www.lisburncastlereagh.gov.uk/w/glenmore-activity-centre",
-    coordinates: [54.5236676,-6.0256607],
+    coordinates: [54.5236676, -6.0256607],
   },
-
+  {
+    name: "Sheskburn Recreation Centre",
+    address: "7 Mary Street, Ballycastle, BT54 6QH",
+    place: "Ballycastle",
+    openingHours:
+      "approx. 10:30 am – 12:30 pm (Active Life older adult pickleball sessions)",
+    surface: "Indoor gym hall",
+    indoorOutdoor: "Indoor",
+    contact:
+      "https://causewaycoastandglens.gov.uk/see-do/sports-development/active-life-2/active-life",
+    coordinates: [54.211, -5.915],
+  },
+  {
+    name: "Roe Valley Leisure Centre",
+    address: "Limavady, Causeway Coast and Glens",
+    place: "Limavady",
+    openingHours:
+      "approx. 10:00 am – 11:30 am (Active Life older adult racquet sessions)",
+    surface: "Indoor sports hall",
+    indoorOutdoor: "Indoor",
+    contact:
+      "https://causewaycoastandglens.gov.uk/see-do/sports-development/active-life-2/active-life",
+    coordinates: [55.05, -6.67],
+  },
+  {
+    name: "Joey Dunlop Leisure Centre",
+    address: "Ballymoney, Causeway Coast and Glens",
+    place: "Ballymoney",
+    openingHours: "approx. 9:00 am – 10:30 am (Active Life racquet sessions)",
+    surface: "Indoor sports hall",
+    indoorOutdoor: "Indoor",
+    contact:
+      "https://causewaycoastandglens.gov.uk/see-do/sports-development/active-life-2/active-life",
+    coordinates: [55.07, -6.512],
+  },
+  {
+    name: "Coleraine Leisure Centre",
+    address: "Coleraine, Causeway Coast and Glens",
+    place: "Coleraine",
+    openingHours:
+      "approx. 10:00 am – 11:30 am (Active Life Pickleball older adult sessions)",
+    surface: "Indoor sports hall",
+    indoorOutdoor: "Indoor",
+    contact:
+      "https://causewaycoastandglens.gov.uk/see-do/sports-development/active-life-2/active-life",
+    coordinates: [55.132, -6.661],
+  },
+  {
+    name: "Dungiven Recreation Centre",
+    address: "Dungiven, Causeway Coast and Glens",
+    place: "Dungiven",
+    openingHours: "approx. 10:30am - 12:00pm ",
+    surface: "Indoor sports hall",
+    indoorOutdoor: "Indoor",
+    contact:
+      "https://causewaycoastandglens.gov.uk/see-do/sports-development/active-life-2/active-life",
+    coordinates: [55.05, -6.984],
+  },
 ];

@@ -199,3 +199,19 @@ html, body, #root {
   border-radius: 4px;
   width: 100%;
 }
+
+.clear-btn {
+  padding: 10px;
+  font-size: 15px;
+  background-color: #eee;
+  color: #333;
+  border: none;
+  border-radius: 6px;
+  margin-top: 8px;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.clear-btn:hover {
+  background-color: #ddd;
+}
