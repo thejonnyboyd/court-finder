@@ -27,6 +27,13 @@ function MapView({ courts, userLocation }) {
     <MapContainer
       center={[54.5973, -5.9301]} 
       zoom={8}
+      minZoom={6}
+      maxZoom={18}
+      maxBounds={[
+        [51.3, -10.8],
+        [55.5, -5],
+      ]} 
+      maxBoundsViscosity={0.7} 
       style={{ height: "100%", width: "100%" }}
     >
       <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
@@ -34,12 +41,20 @@ function MapView({ courts, userLocation }) {
       {courts.map((court, idx) => (
         <Marker key={idx} position={court.coordinates}>
           <Popup>
-            <strong>{court.name}</strong><br />
-            {court.address}<br />
-            {court.place}<br />
-            Hours: {court.openingHours}<br />
-            Surface: {court.surface}<br />
-            Contact: <a href={court.contact} target="_blank" rel="noreferrer">{court.contact}</a>
+            <strong>{court.name}</strong>
+            <br />
+            {court.address}
+            <br />
+            {court.place}
+            <br />
+            Hours: {court.openingHours}
+            <br />
+            Surface: {court.surface}
+            <br />
+            Contact:{" "}
+            <a href={court.contact} target="_blank" rel="noreferrer">
+              {court.contact}
+            </a>
           </Popup>
         </Marker>
       ))}

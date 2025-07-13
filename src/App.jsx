@@ -79,7 +79,15 @@ function App() {
 
   return (
     <div className="app">
-      <div className="map-title">Court Finder</div>
+      <div className="map-title">
+        <div className="logo-wrapper">
+          <img
+            src="/images/CourtFinderLogo.png"
+            alt="Court Finder Logo"
+            className="logo-image"
+          />
+        </div>
+      </div>
 
       <div className="desktop-toolbar">
         <button
