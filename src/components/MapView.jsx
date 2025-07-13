@@ -10,6 +10,13 @@ const userIcon = new L.Icon({
   popupAnchor: [0, -32],
 });
 
+const courtIcon = new L.Icon({
+  iconUrl: "https://maps.gstatic.com/mapfiles/ms2/micons/red-dot.png",
+  iconSize: [32, 32],
+  iconAnchor: [16, 32],
+  popupAnchor: [0, -32],
+});
+
 const LocationSetter = ({ userLocation }) => {
   const map = useMap();
 
@@ -25,21 +32,28 @@ const LocationSetter = ({ userLocation }) => {
 function MapView({ courts, userLocation }) {
   return (
     <MapContainer
-      center={[54.5973, -5.9301]} 
+      center={[54.5973, -5.9301]}
       zoom={8}
       minZoom={6}
       maxZoom={18}
       maxBounds={[
         [51.3, -10.8],
         [55.5, -5],
-      ]} 
-      maxBoundsViscosity={0.7} 
+      ]}
+      maxBoundsViscosity={0.7}
       style={{ height: "100%", width: "100%" }}
     >
       <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
 
       {courts.map((court, idx) => (
-        <Marker key={idx} position={court.coordinates}>
+        <Marker
+          key={idx}
+          position={court.coordinates}
+          icon={courtIcon}
+          eventHandlers={{
+            click: () => onCourtSelect(court),
+          }}
+        >
           <Popup>
             <strong>{court.name}</strong>
             <br />
