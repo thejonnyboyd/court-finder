@@ -38,7 +38,7 @@ function MapView({ courts, userLocation }) {
       maxZoom={18}
       maxBounds={[
         [51.3, -10.8],
-        [55.5, -5],
+        [55.8, -4.5],
       ]}
       maxBoundsViscosity={0.7}
       style={{ height: "100%", width: "100%" }}
@@ -54,7 +54,7 @@ function MapView({ courts, userLocation }) {
             click: () => onCourtSelect(court),
           }}
         >
-          <Popup>
+          <Popup autoPan={true} autoPanPadding={[20, 100]} keepInView={true}>
             <strong>{court.name}</strong>
             <br />
             {court.address}
