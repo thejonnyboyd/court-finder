@@ -82,7 +82,7 @@ function App() {
       <div className="map-title">
         <div className="logo-wrapper">
           <img
-            src={`${import.meta.env.BASE_URL}images/logo.png`}
+            src={`${import.meta.env.BASE_URL}public/images/logo.png`}
             alt="Court Finder Logo"
             className="logo-image"
           />
