@@ -1,6 +1,5 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import MapView from "./components/MapView";
-import { courts as allCourts } from "./data/courts";
 import "./App.css";
 import { FaFilter, FaSearch, FaMapMarkerAlt } from "react-icons/fa";
 
@@ -21,6 +20,15 @@ function App() {
   const [filterOpen, setFilterOpen] = useState(false);
   const [searchPanelOpen, setSearchPanelOpen] = useState(false);
   const [userLocation, setUserLocation] = useState(null);
+
+  const [allCourts, setAllCourts] = useState([]);
+
+  useEffect(() => {
+    fetch("https://court-finder-data.s3.eu-north-1.amazonaws.com/courts.json")
+      .then((res) => res.json())
+      .then(setAllCourts)
+      .catch(console.error);
+  }, []);
 
   const filteredCourts = allCourts.filter((court) => {
     const matchesQuery =
