@@ -1,12 +1,32 @@
-# React + Vite
+# 🏓 Court Finder
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+**Court Finder** is a mobile-friendly web application that helps users locate Pickleball courts across Northern Ireland. Built with **React + Leaflet**, it displays courts on an interactive map, supports filtering and different search options.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🔍 Features
 
-## Expanding the ESLint configuration
+- 🗺️ **Map of Northern Ireland** with court markers using Leaflet
+- 🔎 **Search** by place (e.g. "Belfast")
+- 🧰 **Filter** by surface type, indoor/outdoor, and opening hours
+- 📍 **Use My Location** to find nearby courts
+- 📱 **Responsive Design** with different layouts for mobile and desktop
+- ⚙️ **Court data served via S3** (JSON file hosted in AWS)
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+---
+
+## 🚀 Live Demo
+
+[**View the app**](https://thejonnyboyd.github.io/court-finder/)
+
+---
+
+## 🧰 Tech Stack
+
+- **Frontend**: React (Vite), Leaflet, React Icons, CSS
+- **Cloud**: AWS S3 (data hosting), AWS Lambda, DynamoDB (data storage)
+
+---
+
+## 📬 Contact
+Made by @thejonnyboyd
